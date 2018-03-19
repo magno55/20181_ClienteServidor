@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="windows-1252"?>
-<faces-config version="2.1" xmlns="http://java.sun.com/xml/ns/javaee">
-  <managed-bean>
-    <managed-bean-name>alumno</managed-bean-name>
-    <managed-bean-class>sesion_1.alumno</managed-bean-class>
-    <managed-bean-scope>request</managed-bean-scope>
-  </managed-bean>
-</faces-config>
