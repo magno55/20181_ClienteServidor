@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="pag_principal.jsf" id="d1">
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="50px" id="gr3">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc3">
+                        <!-- Header -->
+                        <p>
+                        <af:outputLabel value="UAP Cliente Servidor" id="ol6"/>
+                        </p>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Content -->
+                        <af:panelGroupLayout id="pgl2">
+              
+                        <p>
+                            <af:outputText value="Nombre " id="ot3"/>
+                            <af:outputText value="Magno Isidro Taipe charca" id="ot4" inlineStyle="column-width:100px;"/>
+                        </p>
+                        <p>
+                            <af:outputText value="Codigo " id="ot7"/>
+                            <af:outputText value="2014124369" id="ot9"/>    
+                        </p>
+              <af:button text="Departamento" id="b1" action="principal_departamento"/>
+              <af:button text="Trabajador" id="b2" action="principal_trabajador"/>
+            </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="50px" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <!-- Footer -->
+                        <p>
+                        <af:outputLabel value="Dirección: Urb. Daniel Alcides Carrión G-14, Av. Paseo de La Cultura, José Luis Bustamente y Rivero" id="ol5"/>
+                        </p>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>
