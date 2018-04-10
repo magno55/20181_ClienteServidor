@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="mtaipe_principalPageDef"
+                Package="s05.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="mtaipe_tfreutilizable1" taskFlowId="/WEB-INF/mtaipe_tf-reutilizable.xml#mtaipe_tf-reutilizable"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="inputTitle" value="left panel"/>
+      </parameters>
+    </taskFlow>
+    <taskFlow id="mtaipe_tfreutilizable2" taskFlowId="/WEB-INF/mtaipe_tf-reutilizable.xml#mtaipe_tf-reutilizable"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="inputTitle" value="right panel"/>
+      </parameters>
+    </taskFlow>
+  </executables>
+  <bindings/>
+</pageDefinition>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.9.14" id="DataBindings"
+             SeparateXMLFiles="false" Package="s05.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/mtaipe_principal.jsf" usageId="s05_view_mtaipe_principalPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="s05_view_mtaipe_principalPageDef" path="s05.view.pageDefs.mtaipe_principalPageDef"/>
+  </pageDefinitionUsages>
+</Application>

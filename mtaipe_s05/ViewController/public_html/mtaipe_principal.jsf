@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="vw_principal.jsf" id="d1">
+        <af:form id="f1">
+            <af:panelHeader text="UAP - Cliente Servidor" id="ph1">
+                <f:facet name="context"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="menuBar"/>
+                <f:facet name="legend"/>
+                <f:facet name="info"/>
+                <af:panelGridLayout id="pgl1" >
+                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
+                        <af:gridCell marginStart="5px" width="50%" id="gc1">
+                            <af:region value="#{bindings.mtaipe_tfreutilizable1.regionModel}" id="r1"/>
+                        </af:gridCell>
+                        <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2">
+                            <af:region value="#{bindings.mtaipe_tfreutilizable2.regionModel}" id="r2"/>
+                        </af:gridCell>
+                    </af:gridRow>
+                </af:panelGridLayout>
+            </af:panelHeader>            
+        </af:form>
+    </af:document>
+</f:view>
