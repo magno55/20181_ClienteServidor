@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <af:document title="mtaipe_dashboard.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+      <af:pageTemplate viewId="/oracle/templates/tabletFirstTemplate.jspx" id="pt1">
+        <f:facet name="header"/>
+        <f:facet name="status"/>
+        <f:facet name="appNav"/>
+        <f:facet name="globalLinks"/>
+        <f:facet name="footer"/>
+        <f:facet name="center">
+          <af:masonryLayout id="ml1">
+            <af:panelGroupLayout id="pgl2" styleClass="AFMasonryTileSize2x1 tileStyle " layout="vertical">
+              <af:panelGridLayout id="pgl6">
+                <af:gridRow marginTop="5px" height="auto" id="gr2">
+                  <af:gridCell marginStart="5px" rowSpan="2" width="50%" id="gc3">
+                    <af:image shortDesc="#{bindings.image.hints.tooltip}" id="ot1"
+                              source="resources/images/people/#{bindings.image.inputValue}"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc4">
+                    <af:panelFormLayout id="pfl1">
+                      <af:inputText value="#{bindings.firstName.inputValue}" label="#{bindings.firstName.hints.label}"
+                                    required="#{bindings.firstName.hints.mandatory}" readOnly="true"
+                                    columns="#{bindings.firstName.hints.displayWidth}"
+                                    maximumLength="#{bindings.firstName.hints.precision}"
+                                    shortDesc="#{bindings.firstName.hints.tooltip}" id="it1">
+                        <f:validator binding="#{bindings.firstName.validator}"/>
+                      </af:inputText>
+                      <af:inputText value="#{bindings.lastName.inputValue}" label="#{bindings.lastName.hints.label}"
+                                    required="#{bindings.lastName.hints.mandatory}" readOnly="true"
+                                    columns="#{bindings.lastName.hints.displayWidth}"
+                                    maximumLength="#{bindings.lastName.hints.precision}"
+                                    shortDesc="#{bindings.lastName.hints.tooltip}" id="it2">
+                        <f:validator binding="#{bindings.lastName.validator}"/>
+                      </af:inputText>
+                      <af:inputText value="#{bindings.email.inputValue}" label="#{bindings.email.hints.label}"
+                                    required="#{bindings.email.hints.mandatory}" readOnly="true"
+                                    columns="#{bindings.email.hints.displayWidth}"
+                                    maximumLength="#{bindings.email.hints.precision}"
+                                    shortDesc="#{bindings.email.hints.tooltip}" id="it3">
+                        <f:validator binding="#{bindings.email.validator}"/>
+                      </af:inputText>
+                    </af:panelFormLayout>
+                  </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr3">
+                  <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc5"/>
+                </af:gridRow>
+              </af:panelGridLayout>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl3" styleClass="AFMasonryTileSize2x1 tileStyle " layout="vertical">
+              <dvt:lineChart id="lineChart1" var="row" value="#{bindings.perfHistory.collectionModel}" timeAxisType="enabled">
+                <dvt:chartLegend id="cl1"/>
+                <f:facet name="dataStamp">
+                  <dvt:chartDataItem id="di1" series="#{bindings.perfHistory.hints.rating.label}" value="#{row.rating}"
+                                     group="#{row.effective}"/>
+                </f:facet>
+              </dvt:lineChart>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl4" styleClass="AFMasonryTileSize2x1 tileStyle " layout="vertical">
+              <dvt:pieChart id="pieChart1" var="row" value="#{bindings.pieComps.collectionModel}" innerRadius="0.5"
+                            title="Compensaciones" styleClass="chartStyle" inlineStyle="width:150px;height:300px">
+                <dvt:chartLegend id="cl2"/>
+                <dvt:pieDataItem id="di2" label="#{row.itemLabel}" value="#{row.itemValue}"/>
+              </dvt:pieChart>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl5" styleClass="AFMasonryTileSize3x2 tileStyle " layout="vertical">
+              <dvt:nBox id="nb1" rowsTitle="Potencial" columnsTitle="Rating" var="ent"
+                        value="#{bindings.colleagues.collectionModel}" inlineStyle="width:500px;height:300px">
+                <f:facet name="rows">
+                  <af:group id="g1">
+                    <dvt:nBoxRow id="nbr1" value="low"/>
+                    <dvt:nBoxRow id="nbr2" value="med"/>
+                    <dvt:nBoxRow id="nbr3" value="high"/>
+                  </af:group>
+                </f:facet>
+                <f:facet name="columns">
+                  <af:group id="g2">
+                    <dvt:nBoxColumn id="nbc1" value="low"/>
+                    <dvt:nBoxColumn id="nbc2" value="med"/>
+                    <dvt:nBoxColumn id="nbc3" value="high"/>
+                  </af:group>
+                </f:facet>
+                <dvt:nBoxNode column="#{ent.nboxRating}" row="#{ent.nboxPotential}" label="#{ent.empName}" id="nbn1">
+                  <f:facet name="icon">
+                    <dvt:marker shape="circle" id="m2">
+                      <dvt:attributeGroups value="#{ent.potential}" type="color" label="#{ent.potential}" id="ag1"/>
+                      <dvt:attributeGroups value="#{ent.rating}" type="shape" label="#{ent.rating}" id="ag2"/>
+                    </dvt:marker>
+                  </f:facet>
+                </dvt:nBoxNode>
+              </dvt:nBox>
+            </af:panelGroupLayout>
+          </af:masonryLayout>
+        </f:facet>
+        <f:facet name="start">
+          <af:listView value="#{bindings.allEmployees.collectionModel}" var="item"
+                       emptyText="#{bindings.allEmployees.viewable ? 'No data to display.' : 'Access Denied.'}"
+                       fetchSize="#{bindings.allEmployees.rangeSize}" id="lv1"
+                       selectionListener="#{bindings.allEmployees.treeModel.makeCurrent}" 
+                       selection="single">
+            <af:listItem id="li1">
+              <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
+                  <af:gridCell marginStart="5px" width="50%" id="gc1">
+                    <af:outputFormatted value="#{item.bindings.firstName.inputValue}" id="of1"/>
+                  </af:gridCell>
+                  <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2">
+                    <af:outputFormatted value="#{item.bindings.lastName.inputValue}" id="of2"/>
+                  </af:gridCell>
+                </af:gridRow>
+              </af:panelGridLayout>
+            </af:listItem>
+          </af:listView>
+        </f:facet>
+        <f:facet name="end"/>
+        <f:attribute name="endWidth" value="0"/>
+        <f:attribute name="showAppNavbar" value="false"/>
+      </af:pageTemplate>
+    </af:form>
+  </af:document>
+</f:view>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.7.31" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <pageMap>
+    <page path="/mtaipe_dashboard.jsf" usageId="view_mtaipe_dashboardPageDef"/>
+  </pageMap>
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
+  <pageDefinitionUsages>
+    <page id="view_mtaipe_dashboardPageDef" path="view.pageDefs.mtaipe_dashboardPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="HRService" path="oracle.workbetter.model.HRService"/>
+  </dataControlUsages>
+</Application>
