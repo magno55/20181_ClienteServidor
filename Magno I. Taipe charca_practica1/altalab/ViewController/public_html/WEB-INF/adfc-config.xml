@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="departamentos">
+    <page>/departamentos.jsf</page>
+  </view>
+  <view id="principal">
+    <page>/Principal.jsf</page>
+  </view>
+  <view id="trabajador">
+    <page>/trabajador.jsf</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id>principal</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>principal_departamento</from-outcome>
+      <to-activity-id>departamentos</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__3">
+      <from-outcome>principal_trabajador</from-outcome>
+      <to-activity-id>trabajador</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__4">
+    <from-activity-id>departamentos</from-activity-id>
+    <control-flow-case id="__5">
+      <from-outcome>departamento_principal</from-outcome>
+      <to-activity-id>principal</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__9">
+      <from-outcome>departamento trabajador</from-outcome>
+      <to-activity-id>trabajador</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__6">
+    <from-activity-id>trabajador</from-activity-id>
+    <control-flow-case id="__7">
+      <from-outcome>trabajador_principal</from-outcome>
+      <to-activity-id>principal</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__8">
+      <from-outcome>trabajador_departamento</from-outcome>
+      <to-activity-id>departamentos</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>
