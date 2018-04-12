@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="Principal.jsf" id="d1">
+    <af:form id="f1">
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow height="50px" id="gr1">
+          <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+            <!-- Header -->
+            <p>
+            <af:outputText value="UAP Cliente Servidor" id="ot1"/>
+            </p>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow height="100%" id="gr2">
+          <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc3">
+            <!-- Content -->
+            <af:panelGroupLayout id="pgl2">
+              
+                  <p><af:outputText value="Nombre " id="ot3"/>
+                    <af:outputText value="Veronica Sarmiento Limachi" id="ot4" inlineStyle="column-width:100px;"/>
+                    </p>
+                    <p>
+                        <af:outputText value="Codigo " id="ot7"/>
+                        <af:outputText value="2014124368" id="ot9"/>    
+                    </p>
+              <af:button text="Departamento" id="b1"/>
+              <af:button text="Trabajador" id="b2"/>
+            </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow height="50px" id="gr3">
+          <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+            <!-- Footer -->
+            <p>
+            <af:outputText value="Dirección: Urb. Daniel Alcides Carrión Mza G LT-14, José Luis Bustamante y Rivero" id="ot8"/>
+            </p>
+          </af:gridCell>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:form>
+  </af:document>
+</f:view>

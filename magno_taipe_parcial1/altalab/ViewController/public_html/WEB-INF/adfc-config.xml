@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="Principal">
+    <page>/Pag_principal.jsf</page>
+  </view>
+  <view id="pag_departamentos">
+    <page>/pag_departamentos.jsf</page>
+  </view>
+  <view id="trabajadores">
+    <page>/trabajadores.jsf</page>
+  </view>
+</adfc-config>

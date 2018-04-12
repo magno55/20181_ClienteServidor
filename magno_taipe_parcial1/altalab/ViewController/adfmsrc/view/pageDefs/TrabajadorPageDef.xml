@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.9.14" id="TrabajadorPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="root" RangeSize="25" DataControl="HRService" id="HRServiceIterator"/>
+    <accessorIterator MasterBinding="HRServiceIterator" Binds="allEmployees" RangeSize="25" DataControl="HRService"
+                      BeanClass="oracle.workbetter.model.Employee" id="allEmployeesIterator"/>
+    <accessorIterator MasterBinding="allEmployeesIterator" Binds="perfHistory" RangeSize="-1" DataControl="HRService"
+                      BeanClass="oracle.workbetter.model.Performance" id="perfHistoryIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="allEmployeesIterator" id="allEmployees">
+      <nodeDefinition DefName="oracle.workbetter.model.Employee" Name="allEmployees0">
+        <AttrNames>
+          <Item Value="firstName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="allEmployeesIterator" id="firstName">
+      <AttrNames>
+        <Item Value="firstName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="allEmployeesIterator" id="lastName">
+      <AttrNames>
+        <Item Value="lastName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="allEmployeesIterator" id="email">
+      <AttrNames>
+        <Item Value="email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="allEmployeesIterator" id="address">
+      <AttrNames>
+        <Item Value="address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="allEmployeesIterator" id="image">
+      <AttrNames>
+        <Item Value="image"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="perfHistoryIterator" id="perfHistory" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="oracle.workbetter.model.Performance" Name="perfHistory">
+        <AttrNames>
+          <Item Value="rating"/>
+          <Item Value="effective"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

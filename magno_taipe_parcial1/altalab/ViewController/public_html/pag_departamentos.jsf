@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="pag_departamentos.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/oracle/templates/tabletFirstTemplate.jspx" id="pt1">
+                <f:facet name="header"/>
+                <f:facet name="status"/>
+                <f:facet name="appNav"/>
+                <f:facet name="globalLinks"/>
+                <f:facet name="footer"/>
+                <f:facet name="center">
+                    <af:panelGridLayout id="pgl1">
+                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
+                            <af:gridCell marginStart="5px" width="50%" id="gc1">
+                                <af:panelGridLayout id="pgl2">
+                                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr2">
+                                        <af:gridCell marginStart="5px" width="50%" id="gc3"/>
+                                        <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc4">
+                                            <af:panelFormLayout id="pfl1">
+                                                <af:inputText value="#{bindings.deptName.inputValue}"
+                                                              label="#{bindings.deptName.hints.label}"
+                                                              required="#{bindings.deptName.hints.mandatory}"
+                                                              readOnly="true"
+                                                              columns="#{bindings.deptName.hints.displayWidth}"
+                                                              maximumLength="#{bindings.deptName.hints.precision}"
+                                                              shortDesc="#{bindings.deptName.hints.tooltip}" id="it1">
+                                                    <f:validator binding="#{bindings.deptName.validator}"/>
+                                                </af:inputText>
+                                                <af:inputText value="#{bindings.address.inputValue}"
+                                                              label="#{bindings.address.hints.label}"
+                                                              required="#{bindings.address.hints.mandatory}"
+                                                              readOnly="true"
+                                                              columns="#{bindings.address.hints.displayWidth}"
+                                                              maximumLength="#{bindings.address.hints.precision}"
+                                                              shortDesc="#{bindings.address.hints.tooltip}" id="it2">
+                                                    <f:validator binding="#{bindings.address.validator}"/>
+                                                </af:inputText>
+                                                <af:inputText value="#{bindings.city.inputValue}"
+                                                              label="#{bindings.city.hints.label}"
+                                                              required="#{bindings.city.hints.mandatory}"
+                                                              readOnly="true"
+                                                              columns="#{bindings.city.hints.displayWidth}"
+                                                              maximumLength="#{bindings.city.hints.precision}"
+                                                              shortDesc="#{bindings.city.hints.tooltip}" id="it3">
+                                                    <f:validator binding="#{bindings.city.validator}"/>
+                                                </af:inputText>
+                                                <af:inputText value="#{bindings.state.inputValue}"
+                                                              label="#{bindings.state.hints.label}"
+                                                              required="#{bindings.state.hints.mandatory}"
+                                                              readOnly="true"
+                                                              columns="#{bindings.state.hints.displayWidth}"
+                                                              maximumLength="#{bindings.state.hints.precision}"
+                                                              shortDesc="#{bindings.state.hints.tooltip}" id="it4">
+                                                    <f:validator binding="#{bindings.state.validator}"/>
+                                                </af:inputText>
+                                                <af:inputText value="#{bindings.country.inputValue}"
+                                                              label="#{bindings.country.hints.label}"
+                                                              required="#{bindings.country.hints.mandatory}"
+                                                              readOnly="true"
+                                                              columns="#{bindings.country.hints.displayWidth}"
+                                                              maximumLength="#{bindings.country.hints.precision}"
+                                                              shortDesc="#{bindings.country.hints.tooltip}" id="it5">
+                                                    <f:validator binding="#{bindings.country.validator}"/>
+                                                </af:inputText>
+                                            </af:panelFormLayout>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                </af:panelGridLayout>
+                            </af:gridCell>
+                            <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc2"/>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </f:facet>
+                <f:facet name="start"/>
+                <f:facet name="end"/>
+                <f:attribute name="endWidth" value="0"/>
+                <f:attribute name="showAppNavBar" value="false"/>                
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>
